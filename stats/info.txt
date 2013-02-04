@@ -1,0 +1,48 @@
+// --------------------------------------------
+// | The EP-Dev Counter script        
+// |                                           
+// | Copyright (c) 2002-2003 EP-Dev.com :           
+// | This program is distributed as free       
+// | software under the GNU General Public     
+// | License as published by the Free Software 
+// | Foundation. You may freely redistribute     
+// | and/or modify this program.               
+// |                                           
+// --------------------------------------------
+
+The stats script is a script that will display total daily hits/visits. It will automatically try to use mysql and if not able to connect via mysql info provided it will use file databases. If you continue to have trouble with using file databases, there is an option inside index.php to force the script to use file databases.
+
+Please remember that stats and archiving are still in beta. If you find any errors, please contact us through the ep-dev.com site.
+
+FEATURES:
+- Daily Hits and Visits
+- Total Hits and Visits
+- Graphs (For every stats day)
+- Biggest Day
+- Arhives
+- Averages
+
+Some Tips:
+Using the graphs:
+The "x#" where # is an integer relates the displayed hits / visits in the graph times whatever # is. However, as an added feature you can scroll over the hits / visits bar for that day in the graph and it will give you the exact hits / visits for that day in a popup tooltip.
+This is also true for the date (the number at the top of each column). Scrolling over the number will give you the full date in format of MONTH DAY, YEAR.
+
+The seperate archive pages and the averages / summaries / stats on that page are specific to that month alone, while the overall averages and summary can be found on the main "index.php" page or "Current Stats" under archive links.
+
+Q: Why is a day or more missing from my "month" graph?
+A: Only logged days will show for that specific month. If no one registers a hit on your page it is assumed the page was down and that day is excluded.
+
+Q: Why do you only have a single total daily hits/visits value?
+A: I believe a counter's job is to track daily hits and visits, as opposed to keeping records. I think keeping records of individual hits and visits is what a stats script is for, not a counter script.
+
+Q: Why can't I check individual ips from yesterday?
+A: Aside from what I said above, the counter is designed to keep as little data as possible. I have seen other counters out there that will have created huge databases after running for year on a busy website. With the system I developed, the maximum number of rows a database can have is 365/year (one for each day)... which is very small when talking databases.
+
+Q: Are there any disadvantages to using this archiving system?
+A: Yes, there are a couple. First off, every single stat 24 hours old will be trimmed, and the IP of that specific stat will be lost. This basicly means that the "TrimDatabase" time in the config of the counter is useless if archiving is enabled. Secondly, enabling archiving will have, to some degree, an effect on the counter's load speed. However, in local testing I have not been able to get the counter's load time over a second... so the increase in time it takes is definitely not significant. (BTW, you can do your own testing by accessing the counter via counter.php?p=time).
+
+Q: Will switching back and forth between archiving and trimming cause problems?
+A: Frequent enabling and disabling of the archiving feature will not cause any harm, but may report incorrect daily stats in the stats script. NOTE: This does not mean that the stats themselves will be incorrect, rather the stats assigned to that specific day may be incorrect (overall stats will still be accurate).
+
+Q: Will this counter ever have more stats than just hits, visits, and averages?
+A: I do not plan on adding more information to the EP-Dev counter (such as logging browser info). However, I do hope that I can merge the EP-Dev counter into a new stats program (heh, probably called EP-Dev stats ;) that will have the functions of the counter with alot of statistic features and better logging.
