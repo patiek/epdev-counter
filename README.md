@@ -1,3 +1,5 @@
+NOTE: This is an old project, kept here for archival purposes. The core of the code is over 10 years old with only minor updates.
+
 EP-Dev Counter
 =============
 EP-Dev Counter is one the most option-packed counters on the internet. Online Visitors/Daily Visitors/Total 
